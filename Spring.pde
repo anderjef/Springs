@@ -1,3 +1,5 @@
+//Jeffrey Andersen
+
 class Spring {
   float springConstant;
   float restLength;

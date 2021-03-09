@@ -1,3 +1,5 @@
+//Jeffrey Andersen
+
 class Particle {
   PVector pos;
   PVector velocity;

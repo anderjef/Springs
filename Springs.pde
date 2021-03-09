@@ -1,12 +1,10 @@
 //Jeffrey Andersen
-//started 02/28/2021
-//inspiration: https://www.youtube.com/watch?v=Rr-5HiXquhw
 
 float springConstant = 0.5;
 float radius = 10;
 float frictionMultiplier = 0.985;
 PVector gravity = new PVector(0, 0.7);
-int numSprings = 20;
+int numSprings = 20; //must be greater than or equal to one
 float restLength = 0.01;
 boolean showParticles = false;
 boolean showCloth = false;
@@ -29,12 +27,12 @@ void setup() {
 
 void draw() {
   background(0);
-  for (int i = 0; i < numSprings; i++) {
-    springs[i].show();
+  for (Spring s : springs) {
+    s.show();
   }
   if (showParticles) {
-    for (int i = 0; i < particles.length; i++) {
-      particles[i].show();
+    for (Particle p : particles) {
+      p.show();
     }
   }
   if (showCloth) {
@@ -46,12 +44,12 @@ void draw() {
     curveVertex(particles[particles.length - 1].pos.x, particles[particles.length - 1].pos.y);
     endShape();
   }
-  for (int i = 0; i < numSprings; i++) {
-    springs[i].update();
+  for (Spring s : springs) {
+    s.update();
   }
-  for (int i = 0; i < particles.length; i++) {
-    particles[i].applyForce(gravity);
-    particles[i].update();
+  for (Particle p : particles) {
+    p.applyForce(gravity);
+    p.update();
   }
   
   if (mousePressed) {
