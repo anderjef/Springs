@@ -1,4 +1,4 @@
-# Lorenz_Attractors
+# Springs
 ### Copyright
 (c) © 2021 Jeffrey Andersen
 
