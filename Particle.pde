@@ -1,12 +1,12 @@
 //Jeffrey Andersen
 
 class Particle {
-  PVector pos;
+  PVector pos; //position
   PVector velocity;
   PVector acceleration;
   float frictionMultiplier;
   float radius;
-  float mass;
+  float mass = 1;
   
   Particle(PVector _pos, float _radius, float _frictionMultiplier) {
     pos = _pos;
@@ -14,7 +14,6 @@ class Particle {
     acceleration = new PVector(0, 0);
     frictionMultiplier = _frictionMultiplier;
     radius = _radius;
-    mass = 1;
   }
   
   void applyForce(PVector force) {
@@ -29,6 +28,6 @@ class Particle {
   }
   
   void show() {
-    circle(pos.x, pos.y, radius);
+    circle(pos.x, pos.y, radius * 2);
   }
 }
